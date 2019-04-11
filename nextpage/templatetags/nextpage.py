@@ -109,10 +109,7 @@ def paginate(context, template='pagination.html'):
 
         template = get_template("nextpage/%s" % template)
 
-        context = Context(to_return)
-
-        if django.get_version() >= '1.9':
-            context = context.flatten()
+        context = to_return
 
     return template.render(context)
     
